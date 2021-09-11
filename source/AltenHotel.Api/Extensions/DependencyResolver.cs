@@ -18,7 +18,7 @@ namespace AltenHotel.Api.Extensions
         public static void ResolveServices(this IServiceCollection services, IConfiguration configuration)
         {
             //just for test porpuses, can be used SqlServer
-            services.AddDbContext<HotelContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<HotelContext>(opt => opt.UseInMemoryDatabase("AltenHotel"));
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IBookingRepository, BookingRepository>();

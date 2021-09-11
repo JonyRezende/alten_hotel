@@ -40,6 +40,13 @@ namespace Domain.Validations
                 return _validationResponse;
             }
 
+            if ((startDate - DateTime.Now).TotalDays > 30)
+            {
+                _validationResponse.Valid = false;
+                _validationResponse.Error = "Room can’t be reserved more than 30 days in advance";
+                return _validationResponse;
+            }
+
             if (!await _bookingRepository.CheckBookingByDate(startDate, endDate))
             {
                 _validationResponse.Valid = false;

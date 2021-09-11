@@ -1,17 +1,8 @@
-using Application.Mappers;
 using Application.Models;
 using Application.Services;
-using Arch.EntityFrameworkCore.UnitOfWork;
 using Domain.Entities;
 using Domain.Interfaces.Repositories;
-using Domain.Services;
-using Microsoft.EntityFrameworkCore.Query;
 using Moq;
-using NSubstitute;
-using System;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -21,7 +12,7 @@ namespace AltenHotel.UnitTests.Domain.Services
     {
         private readonly Mock<IBookingRepository> _bookingRepository;
         private readonly BookingService _bookingServices;
-        
+
 
         public BookingServiceTests()
         {

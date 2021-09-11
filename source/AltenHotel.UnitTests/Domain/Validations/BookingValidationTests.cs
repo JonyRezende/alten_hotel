@@ -32,7 +32,7 @@ namespace AltenHotel.UnitTests.Domain.Validations
         }
 
         [Fact]
-        public async Task CheckValidDate_WithInvalidT_odayDate_ShouldReturnFalse()
+        public async Task CheckValidDate_WithInvalid_TodayDate_ShouldReturnFalse()
         {
             DateTime startBookingDate = DateTime.Now;
             DateTime endBookingDate = DateTime.Now;
@@ -53,6 +53,18 @@ namespace AltenHotel.UnitTests.Domain.Validations
 
             Assert.False(response.Valid);
             Assert.Equal("Reservation can't be longer than 3 days", response.Error);
+        }
+
+        [Fact]
+        public async Task CheckValidDate_WithInvalidDate_MoreThanThirtyDays_ShouldReturnFalse()
+        {
+            DateTime startBookingDate = DateTime.Now.AddDays(31);
+            DateTime endBookingDate = DateTime.Now.AddDays(31);
+
+            var response = await _bookingValidation.CheckValidDate(startBookingDate, endBookingDate);
+
+            Assert.False(response.Valid);
+            Assert.Equal("Room can’t be reserved more than 30 days in advance", response.Error);
         }
 
         [Fact]
