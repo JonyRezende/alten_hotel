@@ -68,6 +68,9 @@ To run the Migration, 2 steps needs to be made
 
   With Visual Studio opened, open the Package Manager Console
   Make sure the Default Project in that window was checked as "Infrastructure" like the Image
+  
+  ![package](https://user-images.githubusercontent.com/26381060/132993693-a8a1996f-094e-4a88-9dd0-b361a2149517.png)
+  
   Run the command  `Update-Database`
   
   
