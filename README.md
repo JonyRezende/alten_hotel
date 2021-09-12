@@ -69,6 +69,9 @@ In case you want to test with persistent data, or you want to deploy the applica
   
   Run the command  `Update-Database`
   
+  With these steps, the API will run in SQL Server.
+  
+  
 ### Swagger
    
    By default, the swagger URL will be opened when you run the API and can be used to test the endpoints, you can also use a third programm to send the payloads, like [Insomnia](https://insomnia.rest/download) or [Postman](https://www.postman.com/downloads/). Swagger also provides all payloads examples for the API.
