@@ -11,6 +11,7 @@
     * [Swagger](#swagger)
  * [Tests](#tests)
  * [Details](#details)
+ * [Improvements](#improvements)
 
 ## Technologies
 
@@ -83,3 +84,10 @@ In case you want to test with persistent data, or you want to deploy the applica
    * Format data for API: `yyyy-mm-dd`
    * For deploy and quality API, deploy is recommended in cloud like Azure, GCP or AWS
    * Recommended to use a pipeline with unit tests and make more than an instance, when deploy 
+
+## Improvements
+   
+   Improvements can be made, like Customer endpoint, Rooms endpoint, Address endpoint, in this case we can also implement a layer with default returns and a handler to deal with information returned by services.
+   Log can be improved in many ways, the BaseController implements a simple log with errors only but we can choose a log provider, inject in the code e specify where and what we need to log.
+   Third libraries can be implemented, like AutoMapper and Validation
+   
