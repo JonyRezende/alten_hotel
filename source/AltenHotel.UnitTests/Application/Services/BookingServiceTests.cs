@@ -13,7 +13,6 @@ namespace AltenHotel.UnitTests.Domain.Services
         private readonly Mock<IBookingRepository> _bookingRepository;
         private readonly BookingService _bookingServices;
 
-
         public BookingServiceTests()
         {
             _bookingRepository = new Mock<IBookingRepository>();

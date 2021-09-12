@@ -1,5 +1,4 @@
 ﻿using Application.Interfaces.Services;
-using Application.Mappers;
 using Application.Models;
 using Domain.Interfaces.Validations;
 using Microsoft.AspNetCore.Mvc;
@@ -82,7 +81,7 @@ namespace AltenHotel.Api.Controllers
 
                 /* Can be improved creating a new endpoint, with customer register, and managing customers, in this case we can just set de ID of the customer */
                 var customer = await _customerService.AddCustomerAsync(placeReservationModel.CustomerName, placeReservationModel.CustomerEmail);
-                
+
                 var booking = await _bookingService.AddBookingAsync(placeReservationModel, customer.Id);
 
                 return Created("PlaceReservation", booking);
