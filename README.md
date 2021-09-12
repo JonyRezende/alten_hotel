@@ -10,6 +10,7 @@
     * [In Memory](#in-memory)
     * [SQL Server](#sql-server)
     * [Swagger](#swagger)
+ * [Tests](#tests)
  * [Details](#details)
 
 ## Technologies
@@ -74,6 +75,9 @@ To run the Migration, 2 steps needs to be made
 ### Swagger
    
    By default, the swagger URL will be opened when you run the API and can be used to test the endpoints, you can also use a third programm to send the payloads, like [Insomnia](https://insomnia.rest/download) or [Postman](https://www.postman.com/downloads/). Swagger also provides all payloads examples for the API.
+   
+##Tests
+   The Unit Tests is in project `AltenHotel.UnitTests`
    
 ## Details
    
