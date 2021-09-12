@@ -38,7 +38,7 @@ For tests purposes and to make easy to run, this API is using "InMemoryDatabase"
 
 In case you want to test with persistent data, or you want to deploy the application, you can easily run a Migration and It'll create a database, in this case, make sure you have [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) installed.
 
-<details>
+<details> how-to
 To run the Migration, 2 steps needs to be made
 
 #### Step 1 - Change InMemoryDatabase to SqlServer
