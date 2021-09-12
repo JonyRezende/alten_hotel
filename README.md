@@ -18,6 +18,15 @@
    * [Comments](#comments)
 <!--te-->
 
+### Technologies
+
+- [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0)
+- [Entity Framework](https://docs.microsoft.com/en-us/ef/)
+- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+- [NSubstitute](https://nsubstitute.github.io/)
+- [Moq](https://github.com/Moq/moq4/wiki/Quickstart)
+- [Swagger](https://swagger.io/)
+
 ### Prerequisites
 
 Before you start, you neeed to install [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0), you need also a source code editor like [Visual Studio](https://visualstudio.microsoft.com/pt-br/downloads/) or [VSCode](https://code.visualstudio.com/).
