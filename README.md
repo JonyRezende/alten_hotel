@@ -77,7 +77,7 @@ In case you want to test with persistent data, or you want to deploy the applica
    By default, the swagger URL will be opened when you run the API and can be used to test the endpoints, you can also use a third programm to send the payloads, like [Insomnia](https://insomnia.rest/download) or [Postman](https://www.postman.com/downloads/). Swagger also provides all payloads examples for the API.
    
 ## Tests
-   The Unit Tests is in project `AltenHotel.UnitTests`
+   The Unit Tests are in project `AltenHotel.UnitTests`
    
 ## Details
    
