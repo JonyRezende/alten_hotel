@@ -15,17 +15,11 @@
 ## Technologies
 
 [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0)
-
 [Entity Framework](https://docs.microsoft.com/en-us/ef/)
-
 [InMemoryDatabase](https://docs.microsoft.com/en-us/ef/core/providers/in-memory/)
-
 [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
-
 [NSubstitute](https://nsubstitute.github.io/)
-
 [Moq](https://github.com/Moq/moq4/wiki/Quickstart)
-
 [Swagger](https://swagger.io/)
 
 ## How To Use
