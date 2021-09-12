@@ -25,7 +25,7 @@ namespace Application.Mappers
                 BookingId = booking.Id,
                 CustomerName = booking.Customer.Name,
                 CustomerEmail = booking.Customer.Email,
-                RoomNumber = booking.RoomNumber, //can be added roomID in case of more rooms
+                RoomNumber = booking.RoomNumber,
                 CreatedDate = booking.CreatedDate.ToShortDateString(),
                 StartBookingDate = booking.StartBookingDate.ToShortDateString(),
                 EndBookingDate = booking.EndBookingDate.ToShortDateString()

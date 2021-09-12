@@ -25,6 +25,7 @@ namespace Application.Services
             var booking = new BookingMap().PlaceReservationToBookingMap(placeReservationModel, customerId);
 
             await _bookingRepository.AddAsync(booking);
+
             return new BookingMap().BookingToBookingResponseMap(booking);
         }
 
@@ -37,7 +38,7 @@ namespace Application.Services
 
         public async Task UpdateBookingAsync(Booking booking, ModifyReservationModel modifyReservationModel)
         {
-            new BookingMap().ModifyReservationToBookingMap(booking, modifyReservationModel);
+            booking = new BookingMap().ModifyReservationToBookingMap(booking, modifyReservationModel);
             await _bookingRepository.UpdateAsync(booking);
         }
 

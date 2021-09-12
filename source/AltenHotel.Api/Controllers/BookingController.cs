@@ -25,17 +25,17 @@ namespace AltenHotel.Api.Controllers
         }
 
         [HttpGet]
-        [Route("GetBookingById")]
+        [Route("GetReservationById")]
         [ProducesResponseType(200, Type = typeof(BookingResponse))]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetByIdAsync(int id)
         {
             try
             {
                 var booking = await _bookingService.GetBookingResponseByIdAsync(id);
                 if (booking is null)
-                    return NotFound("Booking not found");
+                    return NotFound("Reservation not found");
 
                 return Ok(booking);
             }
@@ -50,7 +50,7 @@ namespace AltenHotel.Api.Controllers
         [ProducesResponseType(200, Type = typeof(string))]
         [ProducesResponseType(400, Type = typeof(DefaultError))]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> GetByDate([Required] DateTime startDate, [Required] DateTime endDate)
+        public async Task<IActionResult> GetByDateAsync([Required] DateTime startDate, [Required] DateTime endDate)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace AltenHotel.Api.Controllers
         [ProducesResponseType(200, Type = typeof(BookingResponse))]
         [ProducesResponseType(400, Type = typeof(DefaultError))]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> Create(PlaceReservationModel placeReservationModel)
+        public async Task<IActionResult> CreateAsync(PlaceReservationModel placeReservationModel)
         {
             try
             {
@@ -97,7 +97,7 @@ namespace AltenHotel.Api.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public async Task<IActionResult> Update(ModifyReservationModel modifyReservationModel)
+        public async Task<IActionResult> UpdateAsync(ModifyReservationModel modifyReservationModel)
         {
             try
             {
@@ -107,7 +107,7 @@ namespace AltenHotel.Api.Controllers
 
                 var booking = await _bookingService.GetByIdAsync(modifyReservationModel.Id);
                 if (booking is null)
-                    return NotFound("Booking not found");
+                    return NotFound("Reservation not found");
 
                 await _bookingService.UpdateBookingAsync(booking, modifyReservationModel);
 
@@ -130,7 +130,7 @@ namespace AltenHotel.Api.Controllers
             {
                 var booking = await _bookingService.GetByIdAsync(bookingId);
                 if (booking is null)
-                    return NotFound("Booking not found");
+                    return NotFound("Reservation not found");
 
                 await _bookingService.DeleteBookingAsync(booking);
 

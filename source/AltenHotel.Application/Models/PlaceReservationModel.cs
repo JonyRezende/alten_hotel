@@ -11,7 +11,7 @@ namespace Application.Models
         public string CustomerName { get; set; }
 
         [JsonProperty("customer_email")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "email format invalid")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "email format is invalid")]
         [Required(ErrorMessage = "customer_email is required", AllowEmptyStrings = false)]
         public string CustomerEmail { get; set; }
 
