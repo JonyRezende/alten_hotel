@@ -63,8 +63,7 @@ In case you want to test with persistent data, or you want to deploy the applica
   
 #### Step 2 - Run Migration
 
-  With Visual Studio opened, open the Package Manager Console
-  Make sure the Default Project in that window was checked as "Infrastructure" like the Image
+  With Visual Studio opened, open the Package Manager Console and make sure the Default Project in that window was checked as "Infrastructure" like the image.
   
   ![package](https://user-images.githubusercontent.com/26381060/132993693-a8a1996f-094e-4a88-9dd0-b361a2149517.png)
   
