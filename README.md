@@ -1,6 +1,5 @@
 <h1 align="center">AltenHotel API</h1>
 
-## Description
 <p align="left">This API can help an Hotel to manage their room reservation, the implementation is in the first version and can be improved further.</p>
 
 ## Summary
