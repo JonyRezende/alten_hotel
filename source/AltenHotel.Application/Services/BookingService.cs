@@ -1,4 +1,5 @@
-﻿using Application.Interfaces.Services;
+﻿using Application.Interfaces;
+using Application.Interfaces.Services;
 using Application.Mappers;
 using Application.Models;
 using Domain.Entities;
@@ -11,10 +12,15 @@ namespace Application.Services
     public class BookingService : IBookingService
     {
         private readonly IBookingRepository _bookingRepository;
+        private readonly IBookingMapper _bookingMapper;
 
-        public BookingService(IBookingRepository bookingRepository)
+        public BookingService(
+            IBookingRepository bookingRepository,
+            IBookingMapper bookingMapper
+            )
         {
             _bookingRepository = bookingRepository;
+            _bookingMapper = bookingMapper;
         }
 
         public async Task<BookingResponse> AddBookingAsync(PlaceReservationModel placeReservationModel, int customerId)
@@ -22,23 +28,23 @@ namespace Application.Services
             placeReservationModel.StartBookingDate = Convert.ToDateTime(placeReservationModel.StartBookingDate.Date);
             placeReservationModel.EndBookingDate = Convert.ToDateTime(placeReservationModel.EndBookingDate.Date.AddDays(1).AddMilliseconds(-3));
 
-            var booking = new BookingMap().PlaceReservationToBookingMap(placeReservationModel, customerId);
+            var booking = _bookingMapper.PlaceReservationToBookingMap(placeReservationModel, customerId);
 
             await _bookingRepository.AddAsync(booking);
 
-            return new BookingMap().BookingToBookingResponseMap(booking);
+            return _bookingMapper.BookingToBookingResponseMap(booking);
         }
 
         public async Task<BookingResponse> GetBookingResponseByIdAsync(int id)
         {
             var booking = await _bookingRepository.GetByIdAsync(id);
             
-            return (booking != null ) ? new BookingMap().BookingToBookingResponseMap(booking) : null;
+            return (booking != null ) ? _bookingMapper.BookingToBookingResponseMap(booking) : null;
         }
 
         public async Task UpdateBookingAsync(Booking booking, ModifyReservationModel modifyReservationModel)
         {
-            booking = new BookingMap().ModifyReservationToBookingMap(booking, modifyReservationModel);
+            booking = _bookingMapper.ModifyReservationToBookingMap(booking, modifyReservationModel);
             await _bookingRepository.UpdateAsync(booking);
         }
 

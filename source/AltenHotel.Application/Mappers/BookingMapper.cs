@@ -1,12 +1,13 @@
-﻿using Application.Models;
+﻿using Application.Interfaces;
+using Application.Models;
 using Domain.Entities;
 using System;
 
 namespace Application.Mappers
 {
-    public class BookingMap
+    public class BookingMapper : IBookingMapper
     {
-        public virtual Booking PlaceReservationToBookingMap(PlaceReservationModel placeReservationModel, int customerId)
+        public Booking PlaceReservationToBookingMap(PlaceReservationModel placeReservationModel, int customerId)
         {
             return new Booking()
             {
@@ -18,7 +19,7 @@ namespace Application.Mappers
             };
         }
 
-        public virtual BookingResponse BookingToBookingResponseMap(Booking booking)
+        public BookingResponse BookingToBookingResponseMap(Booking booking)
         {
             return new BookingResponse()
             {
@@ -32,7 +33,7 @@ namespace Application.Mappers
             };
         }
 
-        public virtual Booking ModifyReservationToBookingMap(Booking updateBooking, ModifyReservationModel modifyReservationModel)
+        public Booking ModifyReservationToBookingMap(Booking updateBooking, ModifyReservationModel modifyReservationModel)
         {
             updateBooking.StartBookingDate = modifyReservationModel.NewStartBookingDate;
             updateBooking.EndBookingDate = modifyReservationModel.NewEndBookingDate;

@@ -1,4 +1,6 @@
-﻿using Application.Interfaces.Services;
+﻿using Application.Interfaces;
+using Application.Interfaces.Services;
+using Application.Mappers;
 using Application.Services;
 using Domain.Interfaces.Repositories;
 using Domain.Interfaces.Validations;
@@ -25,6 +27,7 @@ namespace AltenHotel.Api.Extensions
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IBookingService, BookingService>();
             services.AddScoped<IBookingValidation, BookingValidation>();
+            services.AddScoped<IBookingMapper, BookingMapper>();
 
 
             services.AddControllers();

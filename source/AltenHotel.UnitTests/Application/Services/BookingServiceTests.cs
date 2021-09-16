@@ -1,3 +1,4 @@
+using Application.Interfaces;
 using Application.Models;
 using Application.Services;
 using Domain.Entities;
@@ -11,12 +12,14 @@ namespace AltenHotel.UnitTests.Domain.Services
     public class BookingServiceTests
     {
         private readonly Mock<IBookingRepository> _bookingRepository;
+        private readonly Mock<IBookingMapper> _bookingMapper;
         private readonly BookingService _bookingServices;
 
         public BookingServiceTests()
         {
             _bookingRepository = new Mock<IBookingRepository>();
-            _bookingServices = new BookingService(_bookingRepository.Object);
+            _bookingMapper = new Mock<IBookingMapper>();
+            _bookingServices = new BookingService(_bookingRepository.Object, _bookingMapper.Object);
         }
 
         [Fact]
