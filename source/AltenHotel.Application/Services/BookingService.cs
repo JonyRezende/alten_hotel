@@ -25,8 +25,9 @@ namespace Application.Services
 
         public async Task<BookingResponse> AddBookingAsync(PlaceReservationModel placeReservationModel, int customerId)
         {
-            placeReservationModel.StartBookingDate = Convert.ToDateTime(placeReservationModel.StartBookingDate.Date);
-            placeReservationModel.EndBookingDate = Convert.ToDateTime(placeReservationModel.EndBookingDate.Date.AddDays(1).AddMilliseconds(-3));
+            //To make sure that Start at 00:00h and Finish at 23:59h
+            placeReservationModel.StartBookingDate = placeReservationModel.StartBookingDate.Date;
+            placeReservationModel.EndBookingDate = placeReservationModel.EndBookingDate.Date.AddDays(1).AddMilliseconds(-3);
 
             var booking = _bookingMapper.PlaceReservationToBookingMap(placeReservationModel, customerId);
 
